@@ -16,6 +16,8 @@ import django_heroku
 import dj_database_url 
 from decouple import config
 
+# The last three packages imported for heroku deployment 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,6 +31,7 @@ SECRET_KEY = '#sw0c)cz5z)wah$c-t+(capj*emay6&&4kk4()!5tjie1a$rg9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Change for AWS
 ALLOWED_HOSTS = []
 
 
@@ -126,6 +129,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'), 
 ]
