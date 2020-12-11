@@ -1474,3 +1474,10 @@ section {
     margin: -20px 0 30px 0;
   }
 }
+
+/* for i-pad */
+@media screen and (max-device-width: 1024px) {
+  #wrapper {
+      background-image: url("../img/africafund/nairobi-skyline.jpg");
+  }
+}
