@@ -7,4 +7,5 @@ urlpatterns = [
     path('mn-terms.html', views.mnterms, name="mnterms"),
     path('afro-terms.html', views.afroterms, name="afroterms"),
     path('africafund.html', views.africafund, name="africafund"),
-]
+    path('smcap.html', views.smcap, name="smcap"),
+]   

@@ -15,3 +15,7 @@ def mnterms(request):
 # terms view
 def afroterms(request):
     return render(request, 'afro-terms.html', {})
+
+# small-mid-cap view
+def smcap(request):
+    return render(request, 'smcap.html', {})
