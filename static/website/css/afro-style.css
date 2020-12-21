@@ -752,6 +752,60 @@ section {
   padding: 120px 0;
 }
 
+/*
+* FOR IPADS
+*/
+
+/* Page background-image landscape for iPad 3 */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .cta {
+    -webkit-background-size: 2024px 768px !important;
+    background-size: 2024px 768px !important;
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/africafund/kilimanjaro.jpg") fixed center center !important;
+  }
+}
+/* Page background-image portrait for iPad 3 */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .cta {
+    -webkit-background-size: 2024px 768px !important;
+    background-size: 2024px 768px !important;
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/africafund/kilimanjaro.jpg") fixed center center !important;
+  }
+}
+/* Page background-image landscape for iPad 1/2 */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1) {
+  .cta {
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/africafund/kilimanjaro.jpg") fixed center center !important;
+    -webkit-background-size: 2024px 768px !important;
+    background-size: 2024px 768px !important;
+  }
+}
+/* Page background-image portrait for iPad 1/2 */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+  .cta {
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/africafund/kilimanjaro.jpg") fixed center center !important;
+    -webkit-background-size: 5024px 2024px !important;
+    background-size: 5024px 2024px !important;
+  }
+}
+
+
 .cta h3 {
   color: #fff;
   font-size: 28px;

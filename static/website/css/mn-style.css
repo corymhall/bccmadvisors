@@ -433,6 +433,60 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
+/*
+* HERO SECTION FOR IPADS
+*/
+
+/* Page background-image landscape for iPad 3 */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  #hero {
+    -webkit-background-size: 2024px 768px !important;
+    background-size: 2024px 768px !important;
+    background: url("../img/minneapolis/minneapolis.jpg") top center !important;
+  }
+}
+/* Page background-image portrait for iPad 3 */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  #hero {
+    -webkit-background-size: 2024px 768px !important;
+    background-size: 2024px 768px !important;
+    background: url("../img/minneapolis/minneapolis.jpg") top center !important;
+  }
+}
+/* Page background-image landscape for iPad 1/2 */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1) {
+  #hero {
+    background: url("../img/minneapolis/minneapolis.jpg") top center !important;
+    -webkit-background-size: 2024px 768px !important;
+    background-size: 2024px 768px !important;
+  }
+}
+/* Page background-image portrait for iPad 1/2 */
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+  #hero {
+    background: url("../img/minneapolis/minneapolis.jpg") top center !important;
+    -webkit-background-size: 5024px 2024px !important;
+    background-size: 5024px 2024px !important;
+  }
+}
+
+
 #hero:before {
   content: "";
   background: rgba(0, 0, 0, 0.5);
@@ -765,7 +819,7 @@ section {
   .cta {
     -webkit-background-size: 2024px 768px !important;
     background-size: 2024px 768px !important;
-    background: url("../img/minneapolis/minneapolis.jpg") no-repeat center top #000 !important;
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/minneapolis/forest-aerial.jpg") fixed center center !important;
   }
 }
 /* Page background-image portrait for iPad 3 */
@@ -777,7 +831,7 @@ section {
   .cta {
     -webkit-background-size: 2024px 768px !important;
     background-size: 2024px 768px !important;
-    background: url("../img/minneapolis/minneapolis.jpg") no-repeat center top #000 !important;
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/minneapolis/forest-aerial.jpg") fixed center center !important;
   }
 }
 /* Page background-image landscape for iPad 1/2 */
@@ -787,7 +841,7 @@ section {
   and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 1) {
   .cta {
-    background: url("../img/minneapolis/minneapolis.jpg") no-repeat center top #000 !important;
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/minneapolis/forest-aerial.jpg") fixed center center !important;
     -webkit-background-size: 2024px 768px !important;
     background-size: 2024px 768px !important;
   }
@@ -799,7 +853,7 @@ section {
   and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 1) {
   .cta {
-    background: url("../img/minneapolis/minneapolis.jpg") no-repeat center top #000 !important;
+    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/minneapolis/forest-aerial.jpg") fixed center center !important;
     -webkit-background-size: 5024px 2024px !important;
     background-size: 5024px 2024px !important;
   }
@@ -1580,3 +1634,4 @@ section {
     background-size: 5024px 2024px !important;
   }
 }
+
