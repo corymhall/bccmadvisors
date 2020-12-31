@@ -32,7 +32,7 @@ SECRET_KEY = '#sw0c)cz5z)wah$c-t+(capj*emay6&&4kk4()!5tjie1a$rg9'
 DEBUG = True
 
 # Change for AWS
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
