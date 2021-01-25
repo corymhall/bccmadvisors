@@ -12,9 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os 
-import django_heroku
-import dj_database_url 
-from decouple import config
+
 
 # The last three packages imported for heroku deployment 
 
@@ -22,18 +20,25 @@ from decouple import config
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '#sw0c)cz5z)wah$c-t+(capj*emay6&&4kk4()!5tjie1a$rg9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Change for AWS
 ALLOWED_HOSTS = ['*']
 
+
+AWS_STORAGE_BUCKET_NAME = 'bccmwebsitebucket'
+AWS_S3_REGION_NAME = 'us-east-2'
+AWS_S3_CUSTOM_DOMAIN =  'd2wk3ltjsmcl9j.cloudfront.net' # i.e. d2wk3ltjsmcl9j.cloudfront.net
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+MEDIAFILES_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 # Application definition
 
@@ -45,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
+    'storages', 
 ]
 
 MIDDLEWARE = [
@@ -55,7 +61,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', 
 ]
 
 ROOT_URLCONF = 'bccmsite.urls'
@@ -127,11 +132,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'), 
-]
-
-django_heroku.settings(locals())
