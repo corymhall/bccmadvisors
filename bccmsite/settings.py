@@ -10,14 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-from pathlib import Path
+#from pathlib import Path
 import os 
 
 
 # The last three packages imported for heroku deployment 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+#BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -26,19 +27,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#sw0c)cz5z)wah$c-t+(capj*emay6&&4kk4()!5tjie1a$rg9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#DEBUG = False
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', False) )
 
 # Change for AWS
 ALLOWED_HOSTS = ['*']
 
 
-AWS_STORAGE_BUCKET_NAME = 'bccmwebsitebucket'
-AWS_S3_REGION_NAME = 'us-east-2'
-AWS_S3_CUSTOM_DOMAIN =  'd2wk3ltjsmcl9j.cloudfront.net' # i.e. d2wk3ltjsmcl9j.cloudfront.net
-STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-MEDIAFILES_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+#AWS_STORAGE_BUCKET_NAME = 'bccmwebsitebucket'
+#AWS_S3_REGION_NAME = 'us-east-2'
+#AWS_S3_CUSTOM_DOMAIN =  'd2wk3ltjsmcl9j.cloudfront.net' # i.e. d2wk3ltjsmcl9j.cloudfront.net
+#STATICFILES_LOCATION = 'static'
+#STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+#MEDIAFILES_LOCATION = 'media'
+#DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 # Application definition
 
@@ -90,7 +92,7 @@ WSGI_APPLICATION = 'bccmsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
